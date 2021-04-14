@@ -19,11 +19,25 @@ class Aria2Rpc(object):
             self.server = xmlrpclib.ServerProxy(self.rpc_uri, allow_none=True)
         return self.server
 
+    def destroy(self):
+        self.server = None
+
     def call(self, name, *args):
         """通用调用"""
         if self.rpc_secret is not None:
             args = ('token:{}'.format(self.rpc_secret),) + args
         return getattr(self.connect(), name)(*args)
+
+    def ping(self):
+        try:
+            self.get_version()
+            return True
+        except:
+            return False
+
+    def list_methods(self):
+        """添加下载"""
+        return self.call('system.listMethods')
 
     def add_uri(self, uris, options=None, position=None):
         """添加下载"""
