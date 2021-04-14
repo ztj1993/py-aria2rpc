@@ -7,8 +7,6 @@
 
 import xmlrpc.client as xmlrpclib
 
-__version__ = '0.0.3'
-
 
 class Aria2Rpc(object):
     def __init__(self, uri='http://127.0.0.1:6800/rpc', secret=None):
