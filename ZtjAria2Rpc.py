@@ -2,8 +2,6 @@
 # Intro: Aria2 RPC 调用模块
 # Author: Ztj
 # Email: ztj1993@gmail.com
-# Version: 0.0.3
-# Date: 2020-09-16
 
 import xmlrpc.client as xmlrpclib
 
