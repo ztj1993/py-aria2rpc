@@ -12,7 +12,7 @@ readme = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='py-ztj-aria2rpc',
-    version='0.0.3',
+    version='0.0.4',
     description='python aria2rpc package',
     long_description=readme,
     long_description_content_type='text/markdown',
